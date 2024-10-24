@@ -100,6 +100,7 @@ export async function serializePost(content) {
   const mdxSource = await serialize(content, {
     parseFrontmatter: true,
     mdxOptions: {
+      development: false,
       remarkPlugins: [remarkGfm, remarkPluginCaption],
       rehypePlugins: [rehypeSlug, [rehypeExtractHeadings, { headings }]],
     },
